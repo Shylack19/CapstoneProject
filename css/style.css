@@ -44,6 +44,20 @@ body {
     padding-left: 30px;
 }
 
+.dropdown-btn {
+    cursor: pointer;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #414141;
+    padding-left: 30px;
+}
+
+.dropdown-container a {
+    padding: 10px 20px;
+}
+
 .navbar {
     background: #333;
     color: #fff;

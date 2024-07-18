@@ -4,10 +4,15 @@
         <p>John Smith</p>
     </div>
     <a href="#">Dashboard</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Clients Testimonials</a>
-    <a href="#">Contact</a>
-    <a href="#">Inquiries</a>
+    <a href="#" class="dropdown-btn">Account</a>
+    <div class="dropdown-container">
+        <a href="#">Registered Accounts</a>
+        <a href="#">Add Account</a>
+    </div>
+    <a href="#" class="dropdown-btn">Device</a>
+    <div class="dropdown-container">
+        <a href="#">Registered Devices</a>
+        <a href="#">Add Device</a>
+    </div>
+    <a href="#">Reports</a>
 </div>
