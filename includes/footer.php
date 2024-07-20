@@ -1,3 +1,3 @@
 <div class="footer">
-    Copyright © 2024. All rights reserved.
+    Copyright ©SecuredTag 2024. All rights reserved.
 </div>

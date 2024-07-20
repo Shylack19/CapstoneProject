@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Website - Admin Panel</title>
+    <title>Add Device</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script> <!-- Ensure script.js is loaded -->
 </head>
 <body>
     <?php include 'includes/navbar.php'; ?>
     <div class="sidebar">
-    <?php include 'includes/sidebar.php'; ?>
+        <?php include 'includes/sidebar.php'; ?>
     </div>
     <div class="content">
-        <h1>Welcome to Company Website</h1>
+        <h1>Add Device</h1>
+        <!-- Add form for adding a new device here -->
     </div>
     <?php include 'includes/footer.php'; ?>
-    <script src="js/script.js"></script>
 </body>
 </html>

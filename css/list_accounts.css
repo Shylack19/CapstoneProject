@@ -1,0 +1,75 @@
+.content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.panel {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col-md-3 {
+    flex: 1;
+    padding: 5px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background: #f2f2f2;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #5bc0de;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+}
+
+.btn-primary {
+    background-color: #0275d8;
+}
+
+.btn-info {
+    background-color: #5bc0de;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
