@@ -1,3 +1,4 @@
 <div class="navbar">
-    Company Website - Admin Panel
+    <span>Company Website - Admin Panel</span>
+    <button id="toggle-btn">Toggle Sidebar</button>
 </div>
