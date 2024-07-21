@@ -1,3 +1,13 @@
+<?php
+// Include the database connection file
+include 'includes/db_connect.php';
+
+// Fetch accounts from the database
+$sql = "SELECT * FROM accounts";
+$result = mysqli_query($conn, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +15,6 @@
     <title>List Accounts</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/list_accounts.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
     <?php include 'includes/navbar.php'; ?>
@@ -53,27 +62,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Example data, replace with actual data fetching logic -->
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Section A</td>
-                            <td>john@example.com</td>
-                            <td>********</td>
-                            <td>
-                                <button class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></button>
-                                <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>Section B</td>
-                            <td>jane@example.com</td>
-                            <td>********</td>
-                            <td>
-                                <button class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></button>
-                                <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['section']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                echo "<td>********</td>";
+                                echo "<td>";
+                                echo "<button class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></button>";
+                                echo "<button class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></button>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='5'>No accounts found.</td></tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
                 <button class="btn btn-primary">Export to CSV</button>
@@ -83,3 +89,8 @@
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
+
+<?php
+// Close connection
+mysqli_close($conn);
+?>
