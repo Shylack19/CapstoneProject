@@ -8,6 +8,8 @@ $device_name_err = $room_err = $station_no_err = $rfid_no_err = "";
 $success_message = "";
 $error_message = "";
 
+
+
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate device name

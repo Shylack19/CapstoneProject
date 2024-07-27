@@ -1,3 +1,14 @@
+<?php
+// Include the database connection file
+include 'includes/db_connect.php';
+
+// Fetch devices data from the database
+$sql = "SELECT device_name, room, station_no, rfid_no FROM devices";
+$result = mysqli_query($conn, $sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +16,6 @@
     <title>List Devices</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/list_devices.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
     <?php include 'includes/navbar.php'; ?>
@@ -24,10 +34,10 @@
                     </div>
                     <div class="col-md-3">
                         <select class="form-control" id="orderBy">
-                            <option value="Device Name">Device Name</option>
-                            <option value="RFID No.">RFID No.</option>
-                            <option value="Room">Room</option>
-                            <option value="Station No.">Station No.</option>
+                            <option value="device_name">Device Name</option>
+                            <option value="room">Room</option>
+                            <option value="station_no">Station No.</option>
+                            <option value="rfid_no">RFID No.</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -46,34 +56,31 @@
                     <thead>
                         <tr>
                             <th>Device Name</th>
-                            <th>RFID No.</th>
                             <th>Room</th>
                             <th>Station No.</th>
+                            <th>RFID No.</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Example data, replace with actual data fetching logic -->
-                        <tr>
-                            <td>Device 1</td>
-                            <td>123456</td>
-                            <td>Room A</td>
-                            <td>001</td>
-                            <td>
-                                <button class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></button>
-                                <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Device 2</td>
-                            <td>654321</td>
-                            <td>Room B</td>
-                            <td>002</td>
-                            <td>
-                                <button class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></button>
-                                <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $row['device_name'] . "</td>";
+                                echo "<td>" . $row['room'] . "</td>";
+                                echo "<td>" . $row['station_no'] . "</td>";
+                                echo "<td>" . $row['rfid_no'] . "</td>";
+                                echo "<td>";
+                                echo "<button class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></button>";
+                                echo "<button class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></button>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='5'>No devices found</td></tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
                 <button class="btn btn-primary">Export to CSV</button>
@@ -83,3 +90,8 @@
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
+
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>

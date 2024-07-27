@@ -1,0 +1,210 @@
+/* Existing styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: margin-left 0.3s;
+
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.navbar-left {
+    font-size: 18px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-right .dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navbar-right .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navbar-right .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-right .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar-right .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar-right .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    padding-top: 5px;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 15px 20px;
+    transition: background 0.3s, padding-left 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: #575757;
+    padding-left: 30px;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #414141;
+    padding-left: 30px;
+}
+
+.dropdown-container a {
+    padding: 10px 20px;
+}
+
+/* Sidebar profile alignment */
+.profile-cnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile p {
+    margin: 0;
+    color: #fff;
+}
+
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 80px;
+    transition: margin-left 0.3s;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.hide-sidebar .sidebar {
+    width: 0;
+}
+
+.hide-sidebar .navbar {
+    left: 0;
+    width: 100%;
+}
+
+.hide-sidebar .content {
+    margin-left: 0;
+}
+
+
+/* Login Form Styles */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}

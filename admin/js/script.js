@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
 
     // Add search and filter functionality
     document.getElementById('filterBtn').addEventListener('click', function() {
@@ -30,4 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add your data fetching and table update logic here
     });
+
+    document.getElementById('toggle-sidebar').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('active');
+    });
+    
+
+    
 });
